@@ -25,6 +25,7 @@ func _physics_process(delta):
 		#velocity += input_vector * ACCELERATION * delta
 		#velocity = velocity.limit_length(MAX_SPEED)
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+		#print(velocity)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	#delta es un valor que representa el frame rate.
