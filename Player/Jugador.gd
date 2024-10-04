@@ -22,10 +22,12 @@ func _physics_process(delta):
 	
 	
 	if input_vector != Vector2.ZERO:
-		velocity += input_vector * ACCELERATION * delta
-		velocity = velocity.limit_length(MAX_SPEED)
+		#velocity += input_vector * ACCELERATION * delta
+		#velocity = velocity.limit_length(MAX_SPEED)
+		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	#delta es un valor que representa el frame rate.
-	#move_and_collide(velocity)
-	move_and_slide()
+	move_and_collide(velocity * delta)
+	#move_and_slide()
+	
