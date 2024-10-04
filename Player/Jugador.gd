@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const ACCELERATION = 190
+const ACCELERATION = 200
 const MAX_SPEED = 200
-const FRICTION = 800
+const FRICTION = 900
 
 
 #Funcion para mover jugador
