@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const ACCELERATION = 50
+const ACCELERATION = 190
 const MAX_SPEED = 200
-const FRICTION = 200
+const FRICTION = 800
 
 
 #Funcion para mover jugador
@@ -28,4 +28,4 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	#delta es un valor que representa el frame rate.
 	#move_and_collide(velocity)
-	#velocity = move_and_slide(velocity)
+	move_and_slide()
